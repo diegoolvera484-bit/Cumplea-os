@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Ale ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="day-mode">
+
+    <div class="top-controls" id="topControls" style="opacity: 0;">
+        <button id="themeBtn" class="control-btn" title="Modo Noche">☀️</button>
+        <button id="musicBtn" class="control-btn" title="Música">🔇</button>
+    </div>
+
+    <audio id="bgMusic" src="musica_fondo.mp3" loop></audio>
+    <audio id="voiceNote" src="nota_voz.mp3"></audio> 
+    <audio id="claxonsSong" src="/antes_de_que_me_vaya.mp3"></audio> 
+
+    <!-- FASE 1: CONSOLA -->
+    <div id="screen-console" class="screen active">
+        <div class="terminal">
+            <p id="term1"></p>
+            <p id="term2"></p>
+            <p id="term3"></p>
+            <p id="term4" class="highlight"></p>
+        </div>
+    </div>
+
+    <!-- FASE 2: CARRETES Y HILO ROJO REALISTA -->
+    <div id="screen-map" class="screen">
+        <p class="instruction-text" id="mapText">A veces la distancia parece mucha...</p>
+        <div class="map-container">
+            <div class="spool" id="spoolMe">
+                <div class="spool-cap"></div>
+                <div class="spool-thread"></div>
+                <div class="spool-cap"></div>
+            </div>
+            <svg class="thread-svg-scene" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                <path id="destinyThread" d="M 25 50 Q 150 150 275 50" stroke="#ff1744" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="spool" id="spoolHer">
+                <div class="spool-cap"></div>
+                <div class="spool-thread"></div>
+                <div class="spool-cap"></div>
+            </div>
+        </div>
+        <button id="btnConnect" class="magic-btn">Acortar distancia</button>
+    </div>
+
+    <!-- FASE 3: GIRASOL -->
+    <div id="screen-flower" class="screen">
+        <p class="instruction-text" id="flowerText">Toca la semilla para regarla (0/3)</p>
+        <div id="plantStage" class="plant-emoji">🟤</div>
+    </div>
+
+    <!-- FASE 4: PASTEL -->
+    <div id="screen-cake" class="screen">
+        <p class="instruction-text">Pide un deseo y toca la llama para apagarla</p>
+        <div class="cake-container">
+            <div class="flame" id="candleFlame">🔥</div>
+            <div class="cake-base">🎂</div>
+        </div>
+    </div>
+
+    <!-- FASE 5: CARTA Y RAMO DE FLORES -->
+    <div id="screen-letter" class="screen">
+        <div id="starContainer" class="star-sky hidden"></div>
+
+        <div class="final-layout">
+            
+            <div id="bouquetContainer" class="side-bouquet">
+                <svg viewBox="0 0 300 400" class="bouquet-svg" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="kraft" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="https://www.transparenttextures.com/patterns/cardboard-flat.png" x="0" y="0" width="100" height="100" opacity="0.6"/>
+                        </pattern>
+                    </defs>
+                    <path d="M150,380 L40,160 Q150,190 260,160 Z" fill="#bcaaa4" stroke="#8D6E63" stroke-width="2"/>
+                    <path d="M150,380 L60,150 Q150,200 240,150 Z" fill="#d7ccc8" />
+                    <path d="M150,380 L60,150 Q150,200 240,150 Z" fill="url(#kraft)" />
+                    <path d="M130,280 Q150,310 170,280 Q150,260 130,280 Z" fill="#d81b60"/>
+                    <path d="M150,280 Q130,340 120,360 L140,360 Z" fill="#c2185b"/>
+                    <path d="M150,280 Q170,340 180,360 L160,360 Z" fill="#c2185b"/>
+                    <circle cx="150" cy="285" r="8" fill="#ff4081"/>
+
+                    <g class="swing-tag" transform-origin="150 285">
+                        <line x1="150" y1="285" x2="190" y2="320" stroke="#ff4081" stroke-width="1.5"/>
+                        <rect x="180" y="315" width="55" height="25" rx="3" fill="#fff" stroke="#d81b60" stroke-width="1" transform="rotate(15 190 320)"/>
+                        <text x="185" y="332" font-family="'Great Vibes', cursive" font-size="14" fill="#d81b60" transform="rotate(15 190 320)">Para Ale</text>
+                    </g>
+                </svg>
+
+                <div class="heart-glow-backdrop"></div>
+                
+                <div id="parallaxWrapper" class="parallax-wrapper">
+                    <div id="bouquetCanopy" class="bouquet-canopy"></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="header-text">
+                    <h1>¡Feliz Cumple, Ale! ✨</h1>
+                    <p>16 de Junio</p>
+                </div>
+
+                <div class="envelope-wrapper" id="envelopeWrapper">
+                    <div class="letter">
+                        <div class="letter-body">
+                            <div class="pages-container">
+                                
+                                <div class="page active" id="page1">
+                                    <p class="typewriter" data-text="Hola Ale, Espero que te encuentres muy bien. Solo paso a saludarte y a desearte un muy feliz cumpleaños."></p>
+                                    <p class="typewriter" data-text="Sé que aún te debo los regalos de hace años que no te he podido entregar. Por esa razón, este año quise realizar algo diferente."></p>
+                                </div>
+
+                                <!-- PAGINA 2 MODIFICADA CON 3 FOTOS -->
+                                <div class="page" id="page2">
+                                    <div class="carousel-container">
+                                        <button class="carousel-nav prev">❮</button>
+                                        <div class="polaroid-wrapper">
+                                            <div class="polaroid active">
+                                                <img src="/2.jpg" alt="Momento 1">
+                                                <div class="caption">Nuestros momentos 🌻</div>
+                                            </div>
+                                            <div class="polaroid">
+                                                <img src="/1.jpg" alt="Momento 2">
+                                                <div class="caption">Especial para ti ✨</div>
+                                            </div>
+                                            <!-- NUEVA FOTO AGREGADA AQUÍ -->
+                                            <div class="polaroid">
+                                                <img src="/3.png" alt="Momento 3">
+                                                <div class="caption">Recuerdo inolvidable ❤️</div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-nav next">❯</button>
+                                    </div>
+                                </div>
+
+                                <div class="page" id="page3">
+                                    <p class="typewriter" data-text="Ya que por la distancia, el tiempo o cualquier otra situación no nos podemos ver ahora, después, o tal vez nunca; como una persona normal que aprendió a programar, quise regalarte algo eterno."></p>
+                                    <p class="typewriter" data-text="He creado este programa que siempre estará en GitHub y al cual siempre tendrás acceso para ver esta carta."></p>
+                                </div>
+
+                                <div class="page" id="page4">
+                                    <p class="typewriter" data-text="Una cosa más antes de despedirme... Tal vez dejemos de hablar, perdamos el contacto o en algún momento ya no sepamos el uno del otro, cada quien con su vida por delante."></p>
+                                    <p class="typewriter" data-text="Sin embargo, me gustaría muchísimo que me acompañaras en uno de los momentos más importantes de mi vida: mi graduación y titulación."></p>
+                                </div>
+
+                                <div class="page" id="page5">
+                                    <p class="typewriter" data-text="Quizá te preguntes por qué te lo pido. La respuesta es sencilla: tú fuiste, eres y serás una de mis mayores fuentes de motivación e inspiración."></p>
+                                    <p class="typewriter" data-text="Y para decírtelo en términos de un casi ingeniero en sistemas:"></p>
+                                </div>
+
+                                <div class="page" id="page6">
+                                    <p class="typewriter" data-text="1. Siempre serás mi IP 192.168.0.1 (mi puerta de enlace)."></p>
+                                    <p class="typewriter" data-text="2. No eres un simple SELECT *; te filtré con intención y te ordené por prioridad."></p>
+                                    <p class="typewriter" data-text="3. Eres mi 127.0.0.1, porque siempre vuelvo a ti sin importar dónde estés."></p>
+                                </div>
+
+                                <div class="page" id="page7">
+                                    <p class="typewriter" data-text="4. Eres mi VPN, porque me haces sentir seguro."></p>
+                                    <p class="typewriter" data-text="5. Te dediqué todos mis proyectos, usando tu inicial como variable para tenerte presente."></p>
+                                    <p class="typewriter" data-text="Si la vida decide que no nos volvamos a ver o a coincidir, quiero que sepas que te dedico este título."></p>
+                                </div>
+
+                                <div class="page" id="page8">
+                                    <p class="typewriter" data-text="Tú me inspiraste a no rendirme; cuando sentía que no podía más, pensaba en ti... y aquí estoy."></p>
+                                    <p class="typewriter" data-text="Sé que quizá me desvié del tema hoy que es tu día. Te deseo lo mejor, que seas muy feliz y logres cumplir tus metas. ¡FELIZ CUMPLEAÑOS!"></p>
+                                </div>
+
+                                <div class="page" id="page9">
+                                    <p class="typewriter" data-text="Te quiero mucho y recuerda que, si necesitas algo, siempre estaré para ti y te apoyaré."></p>
+                                    
+                                    <div class="signature-box">
+                                        <p class="signature-line" data-text="Con cariño,"></p>
+                                        <p class="signature-name" data-text="Die"></p>
+                                    </div>
+
+                                    <div class="audio-buttons" id="specialAudioButtons">
+                                        <button id="playVoice" class="audio-btn">🎙️ Nota</button>
+                                        <button id="playClaxons" class="audio-btn">🎸 Canción</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="page-controls">
+                                <button id="prevPage" class="page-btn" disabled>Atrás</button>
+                                <span id="pageIndicator">1 / 9</span>
+                                <button id="nextPage" class="page-btn">Sig</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="front"></div>
+                    <div class="flap"></div>
+                    <div class="heart" id="heartIcon">💖</div>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-abrir" id="btnAbrir">Abrir Carta</button>
+                    <button class="btn btn-cerrar" id="btnCerrar">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PARA AMPLIAR FOTOS (LIGHTBOX) -->
+    <div id="lightboxOverlay" class="lightbox-overlay">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="Foto Ampliada">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
